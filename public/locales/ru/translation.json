@@ -1,0 +1,22 @@
+{
+  "home": "Главная",
+  "workspace": "Рабочее пространство",
+  "account": "Аккаунт",
+  "language": "Язык",
+  "slide1": {
+    "title": "Первый слайд",
+    "text": "Nulla vitae elit libero, a pharetra augue mollis interdum."
+  },
+  "slide2": {
+    "title": "Второй слайд",
+    "text": "Nulla vitae elit libero, a pharetra augue mollis interdum."
+  },
+  "slide3": {
+    "title": "Третий слайд",
+    "text": "Nulla vitae elit libero, a pharetra augue mollis interdum."
+  },
+  "slide4": {
+    "title": "Четвертый слайд",
+    "text": "Nulla vitae elit libero, a pharetra augue mollis interdum."
+  }
+}

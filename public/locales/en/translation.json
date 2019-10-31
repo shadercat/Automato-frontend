@@ -1,0 +1,22 @@
+{
+  "home": "Home",
+  "workspace": "Workspace",
+  "account": "Account",
+  "language": "Language",
+  "slide1": {
+    "title": "First slide label",
+    "text": "Nulla vitae elit libero, a pharetra augue mollis interdum."
+  },
+  "slide2": {
+    "title": "Second slide label",
+    "text": "Nulla vitae elit libero, a pharetra augue mollis interdum."
+  },
+  "slide3": {
+    "title": "Third slide label",
+    "text": "Nulla vitae elit libero, a pharetra augue mollis interdum."
+  },
+  "slide4": {
+    "title": "Fourth slide label",
+    "text": "Nulla vitae elit libero, a pharetra augue mollis interdum."
+  }
+}
