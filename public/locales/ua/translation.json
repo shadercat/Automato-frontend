@@ -18,5 +18,12 @@
   "slide4": {
     "title": "Третій слайд",
     "text": "Nulla vitae elit libero, a pharetra augue mollis interdum."
-  }
+  },
+  "login": "Авторизуватися",
+  "emailAddress": "Электрона пошта",
+  "enterEmail": "Введіть пошту",
+  "password": "Пароль",
+  "signIn": "Авторизація",
+  "invalidEmail": "Невірна пошта",
+  "logout": "Вийти з акаунту"
 }

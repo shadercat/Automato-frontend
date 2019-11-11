@@ -18,5 +18,12 @@
   "slide4": {
     "title": "Fourth slide label",
     "text": "Nulla vitae elit libero, a pharetra augue mollis interdum."
-  }
+  },
+  "login": "Login",
+  "emailAddress": "Email address",
+  "enterEmail": "Enter email",
+  "password": "Password",
+  "signIn": "Sign in",
+  "invalidEmail": "Invalid Email",
+  "logout": "Logout"
 }

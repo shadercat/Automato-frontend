@@ -1,0 +1,1 @@
+export {default as authorizedState} from './authorizedState';

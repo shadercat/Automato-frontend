@@ -18,5 +18,12 @@
   "slide4": {
     "title": "Четвертый слайд",
     "text": "Nulla vitae elit libero, a pharetra augue mollis interdum."
-  }
+  },
+  "login": "Авторизоваться",
+  "emailAddress": "Электронная почта",
+  "enterEmail": "Введите почту",
+  "password": "Пароль",
+  "signIn": "Авторизация",
+  "invalidEmail": "Неверная почта",
+  "logout": "Выйти из аккаунта"
 }
