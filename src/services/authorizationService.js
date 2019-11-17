@@ -22,7 +22,7 @@ const AuthorizationService = {
     },
     checkLoginMethod: function () {
         return new Promise( (resolve, reject) => {
-            axios.get(Paths.dataAPI, Config)
+            axios.get(Paths.isAuthorized, Config)
                 .then((res) => {
                     resolve(res.data.auth);
                 })
@@ -43,5 +43,4 @@ const AuthorizationService = {
         })
     }
 };
-
-export {AuthorizationService};
+export default AuthorizationService;

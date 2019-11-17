@@ -1,7 +1,8 @@
 const Paths = {
     userLogin: "http://localhost:3000/users/login",
     userLogout: "http://localhost:3000/users/logout",
-    dataAPI: "http://localhost:3000/api/authorized",
+    isAuthorized: "http://localhost:3000/api/authorized",
+    getUserData: "http://localhost:3000/api/userdata",
     main: "http://localhost:3000"
 };
 const Config = {

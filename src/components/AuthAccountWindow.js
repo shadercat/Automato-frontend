@@ -7,7 +7,7 @@ import AuthorizationService from "../services/authorizationService";
 import {setUnauthorized} from "../actions";
 
 
-class LegacyAccountWindow extends Component{
+class LegacyAuthAccountWindow extends Component{
 
     constructor(props){
         super(props);
@@ -34,15 +34,14 @@ class LegacyAccountWindow extends Component{
             });
     }
     something(){
-        alert(this.props.isAuthorized);
+        alert(this.props.isAuthorized + " " + this.props.email);
     }
     render() {
-        const {t} = this.props;
+        const {t, email} = this.props;
         return(
             <NavDropdown title={t('account')} id="basic-nav-dropdown">
-                <NavDropdown.Item as={Link} to="/login">{t('login')}</NavDropdown.Item>
-                <NavDropdown.Item onClick={this.sendReq}>Another action</NavDropdown.Item>
-                <NavDropdown.Item onClick={this.something}>Something {this.props.isAuthorized.toString()}</NavDropdown.Item>
+                <NavDropdown.Item onClick={this.sendReq}>{email}</NavDropdown.Item>
+                <NavDropdown.Item onClick={this.something}>Is authorized {this.props.isAuthorized.toString()}</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={this.logoutReq}>{t('logout')}</NavDropdown.Item>
             </NavDropdown>
@@ -53,6 +52,7 @@ class LegacyAccountWindow extends Component{
 const mapStateToProps = function(store) {
     return {
         isAuthorized: store.authorizedState.isAuthorized,
+        email: store.userdataState.email
     };
 };
 const mapDispatchToProps = function(dispatch) {
@@ -61,5 +61,5 @@ const mapDispatchToProps = function(dispatch) {
     };
 };
 
-const AccountWindow = withTranslation()(LegacyAccountWindow);
-export default connect(mapStateToProps, mapDispatchToProps)(AccountWindow);
+const AuthAccountWindow = withTranslation()(LegacyAuthAccountWindow);
+export default connect(mapStateToProps, mapDispatchToProps)(AuthAccountWindow);

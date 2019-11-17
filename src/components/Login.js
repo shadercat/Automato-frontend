@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {withTranslation} from "react-i18next";
 import {Form, Button} from "react-bootstrap";
-import {AuthorizationService} from "../services/authorizationService";
-import {setAuthorized} from "../actions";
+import AuthorizationService from "../services/authorizationService";
+import DataAccessService from "../services/dataAccessService";
+import {setAuthorized, setUserdata} from "../actions";
 import {connect} from "react-redux";
 
 class LegacyLogin extends Component{
@@ -25,9 +26,12 @@ class LegacyLogin extends Component{
                 password: form.elements.password.value
             };
             AuthorizationService.loginMethod(args)
-                .then((res) => {
+                .then(async (res) => {
                     this.props.onAuthorized();
-                    alert(res.auth);
+                    await DataAccessService.getUserData()
+                        .then((res) => {
+                            this.props.setUserData(res);
+                        });
                 })
                 .catch((err) =>{
                     alert(err);
@@ -36,7 +40,6 @@ class LegacyLogin extends Component{
         this.setState(prevState => ({
             validate: true
         }));
-        event.preventDefault();
     };
     render() {
         const {t} = this.props;
@@ -83,6 +86,7 @@ const mapStateToProps = function(store) {
 const mapDispatchToProps = function(dispatch) {
     return {
         onAuthorized: () => dispatch(setAuthorized()),
+        setUserData: (data) => dispatch(setUserdata(data))
     }
 };
 
