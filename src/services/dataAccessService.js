@@ -1,6 +1,5 @@
 import axios from "axios";
 import {Config, Paths} from "../constants/GlobalVal";
-import queryString from "query-string";
 
 const DataAccessService = {
     getUserData: function () {

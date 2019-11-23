@@ -5,7 +5,7 @@ import AuthAccountWindow from "./AuthAccountWindow";
 class UserWindow extends Component{
     render() {
         let {isAuth} = this.props;
-        return (isAuth)? (<AuthAccountWindow/>) : (<AccountWindow/>);;
+        return (isAuth) ? (<AuthAccountWindow/>) : (<AccountWindow/>);
     }
 }
 export default UserWindow;

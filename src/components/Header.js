@@ -4,7 +4,6 @@ import '../styles/styles.css';
 import {Nav, Navbar, NavDropdown} from 'react-bootstrap'
 import {Link} from "react-router-dom";
 import {withTranslation} from 'react-i18next';
-import AccountWindow from "./AccountWindow";
 import UserWindow from "./UserWindow";
 import {connect} from 'react-redux';
 

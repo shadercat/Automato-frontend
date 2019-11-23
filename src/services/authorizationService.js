@@ -7,7 +7,7 @@ const AuthorizationService = {
         return new Promise ((resolve, reject) => {
             axios.post(Paths.userLogin, queryString.stringify(args), Config)
                 .then( (res) => {
-                    if(res.status == 200){
+                    if (res.status === 200) {
                         if(res.data.auth === true){
                             resolve(res.data);
                         } else {
