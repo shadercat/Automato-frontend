@@ -1,17 +1,22 @@
 import React, {Component} from 'react';
 import "bootstrap/dist/css/bootstrap.css";
-import '../styles/styles.css';
 import {Nav, Navbar, NavDropdown} from 'react-bootstrap'
 import {Link} from "react-router-dom";
 import {withTranslation} from 'react-i18next';
-import UserWindow from "./UserWindow";
+import UserWindow from "./UserDropdown/UserWindow";
 import {connect} from 'react-redux';
+import PropTypes from "prop-types";
 
 class LegacyHeader extends Component {
     constructor(props) {
         super(props);
         this.changeLanguage = this.changeLanguage.bind(this);
     }
+
+    static propTypes = {
+        t: PropTypes.object.isRequired,
+        i18n: PropTypes.object.isRequired
+    };
 
     changeLanguage(lng, e) {
         const {i18n} = this.props;

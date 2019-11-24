@@ -25,5 +25,9 @@
   "password": "Пароль",
   "signIn": "Авторизація",
   "invalidEmail": "Невірна пошта",
-  "logout": "Вийти з акаунту"
+  "logout": "Вийти з акаунту",
+  "machines": "Апарати",
+  "companies": "Компанії",
+  "statistic": "Статистика",
+  "actions": "Дії"
 }

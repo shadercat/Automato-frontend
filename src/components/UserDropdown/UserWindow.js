@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import AccountWindow from "./AccountWindow";
-import AuthAccountWindow from "./AuthAccountWindow";
+import AccountWindow from "./AccountWindow/UnauthorizedWin";
+import AuthAccountWindow from "./AccountWindow/AuthorizedWin";
 
 class UserWindow extends Component{
     render() {

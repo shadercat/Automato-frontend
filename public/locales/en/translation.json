@@ -25,5 +25,9 @@
   "password": "Password",
   "signIn": "Sign in",
   "invalidEmail": "Invalid Email",
-  "logout": "Logout"
+  "logout": "Logout",
+  "machines": "Machines",
+  "companies": "Companies",
+  "statistic": "Statistic",
+  "actions": "Actions"
 }

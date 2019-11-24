@@ -24,3 +24,23 @@ export function unsetUserdata() {
         type: types.UNSET_USER_DATA
     }
 }
+
+export function setMachinesData(data) {
+    return {
+        type: types.SET_MACHINES_DATA,
+        data: data
+    }
+}
+
+export function updateMachineData(data) {
+    return {
+        type: types.UPDATE_MACHINE_DATA,
+        data: data
+    }
+}
+
+export function unsetMachineData() {
+    return {
+        type: types.UNSET_MACHINES_DATA
+    }
+}

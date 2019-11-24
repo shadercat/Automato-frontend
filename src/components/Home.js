@@ -2,9 +2,11 @@ import React, {Component} from 'react';
 import '../styles/styles.css';
 import {Carousel, Jumbotron} from "react-bootstrap";
 import {withTranslation} from "react-i18next";
-
+import PropTypes from "prop-types";
 class LegacyHome extends Component {
-
+    static propTypes = {
+        t: PropTypes.object.isRequired
+    };
     render() {
         const {t} = this.props;
         return (

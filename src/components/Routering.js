@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import Header from "./Header";
 import Home from "./Home";
 import RedirectWrapper from "./RedirectWrapper";
-import Workspace from "./Workspace";
+import Workspace from "./Workspace/Workspace";
 import Login from "./Login";
 import NoFound from "./NoFound";
 import Footer from "./Footer";

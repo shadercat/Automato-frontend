@@ -5,6 +5,7 @@ import AuthorizationService from "../services/authorizationService";
 import DataAccessService from "../services/dataAccessService";
 import {setAuthorized, setUserdata} from "../actions";
 import {connect} from "react-redux";
+import PropTypes from "prop-types";
 
 class LegacyLogin extends Component{
 
@@ -15,6 +16,10 @@ class LegacyLogin extends Component{
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    static propTypes = {
+        t: PropTypes.object.isRequired
+    };
     handleSubmit(event) {
         const form = event.currentTarget;
         event.preventDefault();

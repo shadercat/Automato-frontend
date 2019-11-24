@@ -1,5 +1,6 @@
 import React, {Suspense} from 'react';
 import './App.css';
+import './styles/styles.css';
 import {createStore, combineReducers} from "redux";
 import * as reducers from './reducers';
 import {Provider} from "react-redux";

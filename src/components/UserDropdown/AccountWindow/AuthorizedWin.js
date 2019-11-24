@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import {withTranslation} from "react-i18next";
 import {NavDropdown} from "react-bootstrap";
 import {connect} from 'react-redux'
-import AuthorizationService from "../services/authorizationService";
-import {setUnauthorized} from "../actions";
+import AuthorizationService from "../../../services/authorizationService";
+import {setUnauthorized} from "../../../actions";
+import PropTypes from "prop-types";
 
 
-class LegacyAuthAccountWindow extends Component{
+class LegacyAuthorizedWindow extends Component {
 
     constructor(props){
         super(props);
@@ -14,6 +15,10 @@ class LegacyAuthAccountWindow extends Component{
         this.logoutReq = this.logoutReq.bind(this);
         this.something = this.something.bind(this);
     }
+
+    static propTypes = {
+        t: PropTypes.object.isRequired
+    };
     sendReq(e){
 
     }
@@ -60,5 +65,5 @@ const mapDispatchToProps = function(dispatch) {
     };
 };
 
-const AuthAccountWindow = withTranslation()(LegacyAuthAccountWindow);
-export default connect(mapStateToProps, mapDispatchToProps)(AuthAccountWindow);
+const AuthorizedWin = withTranslation()(LegacyAuthorizedWindow);
+export default connect(mapStateToProps, mapDispatchToProps)(AuthorizedWin);
