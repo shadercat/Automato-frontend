@@ -34,5 +34,14 @@
   "actions": "Actions",
   "name": "Name",
   "enterName": "Enter name",
-  "invalidName": "Name is required"
+  "invalidName": "Name is required",
+  "close": "Close",
+  "invalidData": "Invalid Data",
+  "passDidNotMatch": "Passwords in boxes didn't match!",
+  "successReg": "Successful Registration",
+  "successRegText": "Now you can sign in! We hope our service make your business easier.",
+  "linkToLogin": "Go and Login!",
+  "submit": "Submit",
+  "logoutSuccess": "Successful logout",
+  "logoutSuccessText": "Now you are unauthorized. You can use other account in order to work with our service"
 }

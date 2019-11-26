@@ -5,7 +5,7 @@ import {withTranslation} from "react-i18next";
 import PropTypes from "prop-types";
 class LegacyHome extends Component {
     static propTypes = {
-        t: PropTypes.object.isRequired
+        t: PropTypes.func.isRequired
     };
     render() {
         const {t} = this.props;

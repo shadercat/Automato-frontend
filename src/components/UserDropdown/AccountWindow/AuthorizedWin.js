@@ -23,12 +23,12 @@ class LegacyAuthorizedWindow extends Component {
 
     }
 
+
     logoutReq(e){
         AuthorizationService.logoutMethod()
             .then((res) => {
-                this.props.unAuthorize();
                 if(res.success){
-                    alert('Unauthorized')
+                    this.props.unAuthorize();
                 } else {
                     alert(res.reason);
                 }
@@ -43,13 +43,15 @@ class LegacyAuthorizedWindow extends Component {
     render() {
         const {t, email} = this.props;
         return(
-            <NavDropdown title={t('account')} id="basic-nav-dropdown">
-                <NavDropdown.Item onClick={this.sendReq}>{email}</NavDropdown.Item>
-                <NavDropdown.Item onClick={this.something}>Is authorized {this.props.isAuthorized.toString()}</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item onClick={this.logoutReq}>{t('logout')}</NavDropdown.Item>
-            </NavDropdown>
-
+            <>
+                <NavDropdown title={t('account')} id="basic-nav-dropdown">
+                    <NavDropdown.Item onClick={this.sendReq}>{email}</NavDropdown.Item>
+                    <NavDropdown.Item onClick={this.something}>Is
+                        authorized {this.props.isAuthorized.toString()}</NavDropdown.Item>
+                    <NavDropdown.Divider/>
+                    <NavDropdown.Item onClick={this.logoutReq}>{t('logout')}</NavDropdown.Item>
+                </NavDropdown>
+            </>
         )
     }
 }

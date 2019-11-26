@@ -7,7 +7,6 @@ import "bootstrap/dist/css/bootstrap.css"
 import PropTypes from "prop-types";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
-
 class LegacyLogin extends Component {
 
     static propTypes = {
@@ -15,7 +14,6 @@ class LegacyLogin extends Component {
         match: PropTypes.object.isRequired,
         location: PropTypes.object.isRequired
     };
-
     render() {
         const {t, match, location} = this.props;
         return (

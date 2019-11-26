@@ -76,8 +76,8 @@ class LegacySignIn extends Component {
                             type="password"
                             placeholder={t('password')}/>
                     </Form.Group>
-                    <Button variant="primary" type="submit" block>
-                        Submit
+                    <Button variant="info" type="submit" block>
+                        {t('submit')}
                     </Button>
                 </Form>
             </div>

@@ -1,7 +1,10 @@
 import React, {Component} from "react";
 import {withTranslation} from "react-i18next";
-import {Button, Form, Modal} from "react-bootstrap";
+import {Button, Form} from "react-bootstrap";
 import AuthorizationService from "../../services/authorizationService";
+import {withRouter} from "react-router";
+import {ModalTop, ModalTopBtn} from "../ModalWindow";
+import PropTypes from "prop-types";
 
 
 class LegacySignUp extends Component {
@@ -10,16 +13,34 @@ class LegacySignUp extends Component {
         super(props);
         this.state = {
             validate: false,
-            show: false
+            show: false,
+            showSuccessModal: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleCloseModal = this.handleCloseModal.bind(this);
+        this.closePasswordModal = this.closePasswordModal.bind(this);
+        this.closeSuccessModal = this.closeSuccessModal.bind(this);
+        this.linkToSignUp = this.linkToSignUp.bind(this);
     }
 
-    handleCloseModal() {
+    static propTypes = {
+        history: PropTypes.object.isRequired,
+        t: PropTypes.func.isRequired
+    };
+
+    closePasswordModal() {
         this.setState(prevState => ({
             show: false
         }))
+    }
+
+    closeSuccessModal() {
+        this.setState(prevState => ({
+            showSuccessModal: false
+        }))
+    }
+
+    linkToSignUp() {
+        this.props.history.push('/authorization');
     }
 
     handleSubmit(event) {
@@ -30,12 +51,15 @@ class LegacySignUp extends Component {
         } else {
             const args = {
                 email: form.elements.email.value.trim(),
-                password: form.elements.password.value
+                password: form.elements.password.value,
+                name: form.elements.name.value
             };
             if (form.elements.password.value === form.elements.password2.value) {
                 AuthorizationService.registrationMethod(args)
                     .then((res) => {
-                        alert("register!");
+                        this.setState(prevState => ({
+                            showSuccessModal: true
+                        }));
                     })
                     .catch((err) => {
                         alert(err);
@@ -55,23 +79,18 @@ class LegacySignUp extends Component {
         const {t} = this.props;
         return (
             <>
-                <Modal show={this.state.show} onHide={this.handleCloseModal} animation={true}>
-                    <Modal.Header>
-                        <Modal.Title>Inavalid Data</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>Passwords in boxes didn't match!</Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={this.handleCloseModal}>
-                            Close
-                        </Button>
-                    </Modal.Footer>
-                </Modal>
+                <ModalTop show={this.state.show} handleClose={this.closePasswordModal}
+                          headerText={t('invalidData')} bodyText={t('passDidNotMatch')}
+                          closeText={t('close')}/>
+
+                <ModalTopBtn show={this.state.showSuccessModal} handleClose={this.closeSuccessModal}
+                             headerText={t('successReg')} bodyText={t('successRegText')}
+                             closeText={t('close')} btnText={t('linkToLogin')}
+                             handleBtn={this.linkToSignUp}/>
+
+
                 <div className="pt-4">
                     <Form noValidate validated={this.state.validate} onSubmit={this.handleSubmit}>
-                        {/*<h2 style={{width: "100%", textAlign: "center"}}*/}
-                        {/*    className="pb-2">*/}
-                        {/*    {t('signUp')}*/}
-                        {/*</h2>*/}
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>{t('emailAddress')}</Form.Label>
                             <Form.Control
@@ -109,8 +128,8 @@ class LegacySignUp extends Component {
                                 type="password"
                                 placeholder={t('rePassword')}/>
                         </Form.Group>
-                        <Button variant="primary" type="submit" block>
-                            Submit
+                        <Button variant="info" type="submit" block>
+                            {t('submit')}
                         </Button>
                     </Form>
                 </div>
@@ -120,4 +139,4 @@ class LegacySignUp extends Component {
 }
 
 const SignUp = withTranslation()(LegacySignUp);
-export default SignUp;
+export default withRouter(SignUp);
