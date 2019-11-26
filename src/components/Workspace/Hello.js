@@ -5,7 +5,7 @@ import {withTranslation} from "react-i18next";
 class LegacyHello extends Component {
     render() {
         return (
-            <div className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+            <div style={{display: "flex", height: "80vh", alignItems: "center", justifyContent: "center"}}>
                 <Jumbotron>
                     <h1>Hello!</h1>
                     <p>

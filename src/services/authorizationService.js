@@ -41,6 +41,23 @@ const AuthorizationService = {
                     reject(err);
                 })
         })
+    },
+    registrationMethod: function (args) {
+        return new Promise((resolve, reject) => {
+            axios.post(Paths.registrationUser, queryString.stringify(args), Config)
+                .then((res) => {
+                    if (res.status === 200) {
+                        if (res.data.success === true) {
+                            resolve(res.data);
+                        } else {
+                            reject(res.data.reason);
+                        }
+                    }
+                })
+                .catch((err) => {
+                    reject(err);
+                })
+        })
     }
 };
 export default AuthorizationService;

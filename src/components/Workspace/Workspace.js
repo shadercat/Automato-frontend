@@ -13,7 +13,7 @@ import Hello from "./Hello";
 class LegacyWorkspace extends Component {
     static propTypes = {
         match: PropTypes.object.isRequired,
-        t: PropTypes.object.isRequired
+        t: PropTypes.func.isRequired
     };
 
     render() {

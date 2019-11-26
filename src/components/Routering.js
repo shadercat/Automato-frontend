@@ -3,7 +3,7 @@ import Header from "./Header";
 import Home from "./Home";
 import RedirectWrapper from "./RedirectWrapper";
 import Workspace from "./Workspace/Workspace";
-import Login from "./Login";
+import Login from "./Authorization/Login";
 import NoFound from "./NoFound";
 import Footer from "./Footer";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
@@ -38,10 +38,12 @@ class Routering extends Component{
                         <Route exact path='/'>
                             <Home/>
                         </Route>
-                        <RedirectWrapper path='/workspace' accessible={this.props.isAuthorized} pathname="/login">
+                        <RedirectWrapper path='/workspace' accessible={this.props.isAuthorized}
+                                         pathname="/authorization/signin">
                             <Workspace/>
                         </RedirectWrapper>
-                        <RedirectWrapper path='/login' accessible={!this.props.isAuthorized} pathname="/workspace">
+                        <RedirectWrapper path='/authorization' accessible={!this.props.isAuthorized}
+                                         pathname="/workspace">
                             <Login/>
                         </RedirectWrapper>
                         <Route>

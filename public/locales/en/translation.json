@@ -23,11 +23,16 @@
   "emailAddress": "Email address",
   "enterEmail": "Enter email",
   "password": "Password",
+  "rePassword": "Repeat password",
   "signIn": "Sign in",
+  "signUp": "Sign up",
   "invalidEmail": "Invalid Email",
   "logout": "Logout",
   "machines": "Machines",
   "companies": "Companies",
   "statistic": "Statistic",
-  "actions": "Actions"
+  "actions": "Actions",
+  "name": "Name",
+  "enterName": "Enter name",
+  "invalidName": "Name is required"
 }

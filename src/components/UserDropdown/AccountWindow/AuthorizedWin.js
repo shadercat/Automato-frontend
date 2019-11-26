@@ -17,7 +17,7 @@ class LegacyAuthorizedWindow extends Component {
     }
 
     static propTypes = {
-        t: PropTypes.object.isRequired
+        t: PropTypes.func.isRequired
     };
     sendReq(e){
 

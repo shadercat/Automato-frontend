@@ -3,7 +3,8 @@ const Paths = {
     userLogout: "http://localhost:3000/users/logout",
     isAuthorized: "http://localhost:3000/api/authorized",
     getUserData: "http://localhost:3000/api/userdata",
-    main: "http://localhost:3000"
+    main: "http://localhost:3000",
+    registrationUser: "http://localhost:3000/users/register"
 };
 const Config = {
     headers: {

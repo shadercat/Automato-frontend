@@ -14,7 +14,7 @@ class LegacyHeader extends Component {
     }
 
     static propTypes = {
-        t: PropTypes.object.isRequired,
+        t: PropTypes.func.isRequired,
         i18n: PropTypes.object.isRequired
     };
 

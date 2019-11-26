@@ -23,11 +23,16 @@
   "emailAddress": "Электронная почта",
   "enterEmail": "Введите почту",
   "password": "Пароль",
-  "signIn": "Авторизация",
+  "rePassword": "Повторите пароль",
+  "signIn": "Вход",
+  "signUp": "Регистрация",
   "invalidEmail": "Неверная почта",
   "logout": "Выйти из аккаунта",
   "machines": "Аппараты",
   "companies": "Компании",
   "statistic": "Статистика",
-  "actions": "Действия"
+  "actions": "Действия",
+  "name": "Имя",
+  "enterName": "Введите имя",
+  "invalidName": "Имя объязательно для заполнения"
 }

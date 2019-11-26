@@ -18,7 +18,7 @@ class LegacyUnauthorizedWindow extends Component {
     }
 
     static propTypes = {
-        t: PropTypes.object.isRequired
+        t: PropTypes.func.isRequired
     };
     sendReq(e){
 
@@ -45,7 +45,7 @@ class LegacyUnauthorizedWindow extends Component {
         const {t} = this.props;
         return(
             <NavDropdown title={t('account')} id="basic-nav-dropdown">
-                <NavDropdown.Item as={Link} to="/login">{t('login')}</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/authorization/signin">{t('login')}</NavDropdown.Item>
                 <NavDropdown.Item onClick={this.sendReq}>Another action</NavDropdown.Item>
                 <NavDropdown.Item onClick={this.something}>Something {this.props.isAuthorized.toString()}</NavDropdown.Item>
                 <NavDropdown.Divider />

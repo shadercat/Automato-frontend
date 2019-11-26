@@ -8,7 +8,7 @@ class Footer extends Component {
         return (
             <Navbar className="bg-teal" variant="dark" sticky="bottom">
                 <Navbar.Text>
-                    Navbar text with an inline element
+                    Project Automato 2019
                 </Navbar.Text>
             </Navbar>
         )
