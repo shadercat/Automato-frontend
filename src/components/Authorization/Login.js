@@ -17,10 +17,10 @@ class LegacyLogin extends Component {
     render() {
         const {t, match, location} = this.props;
         return (
-            <div style={{alignItems: "center", height: "90vh"}}>
+            <div style={{alignItems: "center", minHeight: "90vh"}}>
                 <div style={{margin: "auto", width: "100%", maxWidth: 300, paddingTop: "15vh"}}>
                     {/*<NavDropdown.Divider/>*/}
-                    <Nav justify variant="tabs" defaultActiveKey={`${location.pathname}`}>
+                    <Nav justify variant="tabs" activeKey={`${location.pathname}`}>
                         <Nav.Item>
                             <Nav.Link eventKey={`${match.path}/signin`} as={Link}
                                       to={`${match.path}/signin`}>{t('signIn')}</Nav.Link>

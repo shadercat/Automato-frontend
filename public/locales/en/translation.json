@@ -43,5 +43,10 @@
   "linkToLogin": "Go and Login!",
   "submit": "Submit",
   "logoutSuccess": "Successful logout",
-  "logoutSuccessText": "Now you are unauthorized. You can use other account in order to work with our service"
+  "logoutSuccessText": "Now you are unauthorized. You can use other account in order to work with our service",
+  "owner": "Owner",
+  "company": "Company",
+  "accountType": "Account type",
+  "addInfo": "Additional Information",
+  "fail": "Fail"
 }
