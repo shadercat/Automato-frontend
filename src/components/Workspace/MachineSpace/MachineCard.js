@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {withTranslation} from "react-i18next";
 import PropTypes from "prop-types"
-import {Card, Badge} from "react-bootstrap";
+import {Badge, Card} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
 class LegacyMachineCard extends Component {
@@ -14,11 +14,14 @@ class LegacyMachineCard extends Component {
                     <Card.Header>{item.name}</Card.Header>
                     <Card.Body>
                         <Card.Title>
-                            <Badge
-                                variant={(item.state === "online") ? "success" : "dark"}>{item.state}</Badge>
-                            |
-                            <Badge
-                                variant={(item.prod_state === "warning") ? "danger" : "success"}>{item.prod_state}</Badge></Card.Title>
+                            <Badge variant={(item.state === "online") ? "success" : "dark"}>
+                                {item.state}
+                            </Badge>
+                            &nbsp;|&nbsp;
+                            <Badge variant={(item.prod_state === "warning") ? "danger" : "success"}>
+                                {item.prod_state}
+                            </Badge>
+                        </Card.Title>
                         <Card.Text>
                             {`mac_id: ${item.mac_id} `}
                         </Card.Text>

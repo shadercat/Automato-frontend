@@ -5,7 +5,12 @@ const Paths = {
     getUserData: "http://localhost:3000/api/userdata",
     main: "http://localhost:3000",
     registrationUser: "http://localhost:3000/users/register",
-    getMachineData: "http://localhost:3000/api/machines"
+    getMachineData: "http://localhost:3000/api/machines",
+    createMachine: "http://localhost:3000/machine/create",
+    deleteMachine: "http://localhost:3000/machine/delete",
+    bindMachine: "http://localhost:3000/api/bindmachine",
+    unbindMachine: "http://localhost:3000/api/unbindmachine",
+    deleteMachineLogs: "http://localhost:3000/api/deletemachistory"
 };
 const Config = {
     headers: {

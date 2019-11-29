@@ -8,6 +8,7 @@ import StatisticSpace from "./StatisticSpace";
 import PropTypes from "prop-types";
 import {withRouter} from "react-router";
 import Hello from "./Hello";
+import ActionSpace from "./ActionSpace/ActionSpace";
 
 
 class LegacyWorkspace extends Component {
@@ -23,18 +24,23 @@ class LegacyWorkspace extends Component {
                 <Nav variant="tabs" className="dark-th-color">
                     <Nav.Item>
                         <Nav.Link as={Link} to={`${match.path}/machines`} eventKey="link-1" className="dark-th-color">
-                            {t('machines')}</Nav.Link>
+                            {t('machines')}
+                        </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link as={Link} to={`${match.path}/company`} eventKey="link-2" className="dark-th-color">
-                            {t('companies')}</Nav.Link>
+                            {t('companies')}
+                        </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link as={Link} to={`${match.path}/statistic`} eventKey="link-3" className="dark-th-color">
-                            {t('statistic')}</Nav.Link>
+                            {t('statistic')}
+                        </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="link-4">{t('actions')}</Nav.Link>
+                        <Nav.Link as={Link} to={`${match.path}/actions`} eventKey="link-4" className="dark-th-color">
+                            {t('actions')}
+                        </Nav.Link>
                     </Nav.Item>
                 </Nav>
 
@@ -47,6 +53,9 @@ class LegacyWorkspace extends Component {
                     </Route>
                     <Route path={`${match.path}/statistic`}>
                         <StatisticSpace/>
+                    </Route>
+                    <Route path={`${match.path}/actions`}>
+                        <ActionSpace/>
                     </Route>
                     <Route>
                         <Hello/>
