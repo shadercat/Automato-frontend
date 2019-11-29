@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 import {withTranslation} from "react-i18next";
-import {Button, Form, DropdownButton, Dropdown} from "react-bootstrap";
+import {Button, Form} from "react-bootstrap";
 import AuthorizationService from "../../services/authorizationService";
 import DataAccessService from "../../services/dataAccessService";
 import {setAuthorized, setUserdata} from "../../actions";

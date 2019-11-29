@@ -48,5 +48,9 @@
   "company": "Company",
   "accountType": "Account type",
   "addInfo": "Additional Information",
-  "fail": "Fail"
+  "fail": "Fail",
+  "yourMachine": "There are your machines",
+  "yourMachineMainText": "You can watch and check status of your machines. To refresh this data just click on refresh button",
+  "refresh": "Refresh!",
+  "moreInfo": "More info..."
 }

@@ -13,8 +13,8 @@ import AuthorizationService from "../services/authorizationService";
 import DataAccessService from "../services/dataAccessService";
 
 
-class Routering extends Component{
-    render() {
+class Main extends Component {
+    componentDidMount() {
         AuthorizationService.checkLoginMethod()
             .then(async (res) => {
                 if(res){
@@ -30,6 +30,9 @@ class Routering extends Component{
             .catch((err) => {
                 alert(err);
             });
+    }
+
+    render() {
         return(
             <BrowserRouter>
                 <div>
@@ -69,4 +72,4 @@ const mapDispatchToProps = function(dispatch) {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Routering);
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

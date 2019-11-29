@@ -1,5 +1,6 @@
 import axios from "axios";
 import {Config, Paths} from "../constants/GlobalVal";
+import {standardPostRequest} from "./standardRequestFunc";
 import queryString from "query-string";
 
 const AuthorizationService = {
@@ -43,21 +44,8 @@ const AuthorizationService = {
         })
     },
     registrationMethod: function (args) {
-        return new Promise((resolve, reject) => {
-            axios.post(Paths.registrationUser, queryString.stringify(args), Config)
-                .then((res) => {
-                    if (res.status === 200) {
-                        if (res.data.success === true) {
-                            resolve(res.data);
-                        } else {
-                            reject(res.data.reason);
-                        }
-                    }
-                })
-                .catch((err) => {
-                    reject(err);
-                })
-        })
+        return standardPostRequest(Paths.registrationUser, args, Config);
     }
 };
+
 export default AuthorizationService;

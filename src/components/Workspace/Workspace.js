@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Nav} from "react-bootstrap";
 import {withTranslation} from "react-i18next";
 import {Link, Route, Switch} from "react-router-dom";
-import MachineSpace from "./MachineSpace";
+import MachineSpace from "./MachineSpace/MachineSpace";
 import CompanySpace from "./CompanySpace";
 import StatisticSpace from "./StatisticSpace";
 import PropTypes from "prop-types";

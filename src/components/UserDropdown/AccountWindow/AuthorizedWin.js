@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {withTranslation} from "react-i18next";
 import {NavDropdown} from "react-bootstrap";
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 import AuthorizationService from "../../../services/authorizationService";
 import {setUnauthorized} from "../../../actions";
 import PropTypes from "prop-types";

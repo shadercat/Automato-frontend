@@ -5,7 +5,7 @@ import {createStore, combineReducers} from "redux";
 import * as reducers from './reducers';
 import {Provider} from "react-redux";
 import Loader from "./components/Loader";
-import Routering from "./components/Routering";
+import Main from "./components/Main";
 
 // Redux store
 const reducer = combineReducers(reducers);
@@ -16,7 +16,7 @@ function App() {
     return (
         <Provider store={store}>
             <Suspense fallback={<Loader/>}>
-                <Routering/>
+                <Main/>
             </Suspense>
         </Provider>
     );
