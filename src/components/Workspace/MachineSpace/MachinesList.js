@@ -2,20 +2,24 @@ import React, {Component} from "react";
 import {connect} from 'react-redux';
 import {CardColumns} from "react-bootstrap";
 import MachineCard from "./MachineCard";
+import _ from "lodash";
 
 class LegacyMachineList extends Component {
 
     render() {
+        const {machines} = this.props;
         return (
             <>
-                <CardColumns>
-                    {this.props.machines.map((item) =>
-                        <MachineCard
-                            key={item._id}
-                            item={item}
-                        />
-                    )}
-                </CardColumns>
+                {_.chunk(machines, 3).map((item) =>
+                    <CardColumns key={item[0]._id + "col"} className="mb-2">
+                        {item.map((item2) =>
+                            <MachineCard
+                                key={item2._id}
+                                item={item2}
+                            />
+                        )}
+                    </CardColumns>
+                )}
             </>
         )
     }

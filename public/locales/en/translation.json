@@ -76,5 +76,9 @@
   "unbindMacDescry": "You can unbind foreign machines there. If you want unbind your machine, use delete function instead",
   "delMacLogs": "Delete Machine history (logs)",
   "delMacLogsSuccess": "Delete Machine logs successful",
-  "delMacLogsDescry": "You can delete machine history (logs) there. Only owner this machine can do it."
+  "delMacLogsDescry": "You can delete machine history (logs) there. Only owner this machine can do it.",
+  "machine": "Machine",
+  "state": "State",
+  "prodState": "Production state",
+  "descry": "Description"
 }

@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 import {withRouter} from "react-router";
 import Hello from "./Hello";
 import ActionSpace from "./ActionSpace/ActionSpace";
+import MachineInfo from "./MachineSpace/MachineInformation/MachineInfo";
 
 
 class LegacyWorkspace extends Component {
@@ -45,6 +46,9 @@ class LegacyWorkspace extends Component {
                 </Nav>
 
                 <Switch>
+                    <Route path={`${match.path}/machines/:id`}>
+                        <MachineInfo/>
+                    </Route>
                     <Route path={`${match.path}/machines`}>
                         <MachineSpace/>
                     </Route>

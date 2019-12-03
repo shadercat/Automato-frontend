@@ -17,6 +17,22 @@ const standardGetRequest = function (reqUrl, config) {
     })
 };
 
+const advancedGetRequest = function (reqUrl, args, headers, cred) {
+    return new Promise((resolve, reject) => {
+        axios.get(reqUrl, {params: args, headers: headers, withCredentials: cred})
+            .then((res) => {
+                if (res.data.success === true) {
+                    resolve(res.data.data);
+                } else {
+                    reject(res.data.reason);
+                }
+            })
+            .catch((err) => {
+                reject(err);
+            });
+    })
+};
+
 var standardPostRequest = function (reqUrl, args, config) {
     return new Promise((resolve, reject) => {
         axios.post(reqUrl, queryString.stringify(args), config)
@@ -71,4 +87,4 @@ var standardDeleteRequest = function (reqUrl, args, header, cred) {
     })
 };
 
-export {standardPostRequest, standardGetRequest, standardPutRequest, standardDeleteRequest};
+export {standardPostRequest, standardGetRequest, standardPutRequest, standardDeleteRequest, advancedGetRequest};

@@ -11,9 +11,16 @@ import {connect} from "react-redux";
 import {setAuthorized, setUnauthorized, setUserdata} from "../actions";
 import AuthorizationService from "../services/authorizationService";
 import DataAccessService from "../services/dataAccessService";
+import Loader from "./Loader";
 
 
 class Main extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isFetching: true
+        }
+    }
     componentDidMount() {
         AuthorizationService.checkLoginMethod()
             .then(async (res) => {
@@ -22,17 +29,24 @@ class Main extends Component {
                     await DataAccessService.getUserData()
                         .then((res) => {
                             this.props.setUserData(res);
+                            this.setState({isFetching: false});
                         });
                 } else {
                     this.props.unAuthorized();
+                    this.setState({isFetching: false});
+                    return false
                 }
             })
             .catch((err) => {
+                this.setState({isFetching: false});
                 alert(err);
             });
     }
 
     render() {
+        if (this.state.isFetching) {
+            return <Loader/>
+        }
         return(
             <BrowserRouter>
                 <div>

@@ -1,16 +1,19 @@
+const Main = "http://localhost:3000/"; //http://localhost:3000/
 const Paths = {
-    userLogin: "http://localhost:3000/users/login",
-    userLogout: "http://localhost:3000/users/logout",
-    isAuthorized: "http://localhost:3000/api/authorized",
-    getUserData: "http://localhost:3000/api/userdata",
-    main: "http://localhost:3000",
-    registrationUser: "http://localhost:3000/users/register",
-    getMachineData: "http://localhost:3000/api/machines",
-    createMachine: "http://localhost:3000/machine/create",
-    deleteMachine: "http://localhost:3000/machine/delete",
-    bindMachine: "http://localhost:3000/api/bindmachine",
-    unbindMachine: "http://localhost:3000/api/unbindmachine",
-    deleteMachineLogs: "http://localhost:3000/api/deletemachistory"
+    userLogin: Main + "users/login",
+    userLogout: Main + "users/logout",
+    isAuthorized: Main + "api/authorized",
+    getUserData: Main + "api/userdata",
+    main: "https://automato-backend.herokuapp.com/",
+    registrationUser: Main + "users/register",
+    getMachinesData: Main + "api/machines",
+    getMachineData: Main + "api/machine",
+    createMachine: Main + "machine/create",
+    deleteMachine: Main + "machine/delete",
+    bindMachine: Main + "api/bindmachine",
+    unbindMachine: Main + "api/unbindmachine",
+    deleteMachineLogs: Main + "api/deletemachistory",
+    getMachineLog: Main + "api/machinelog"
 };
 const Config = {
     headers: {
