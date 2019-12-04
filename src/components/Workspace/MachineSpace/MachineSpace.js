@@ -1,5 +1,5 @@
 import React, {Component, Suspense} from "react";
-import {Jumbotron, Card, Button} from "react-bootstrap";
+import {Button, Card, Jumbotron} from "react-bootstrap";
 import {withTranslation} from "react-i18next";
 import Loader from "../../Loader";
 import MachineList from "./MachinesList";
@@ -10,6 +10,7 @@ import DataAccessService from "../../../services/dataAccessService";
 class LegacyMachineSpace extends Component {
     constructor(props) {
         super(props);
+        this.state = {};
         this.downloadMachines = this.downloadMachines.bind(this);
     }
 
@@ -27,6 +28,7 @@ class LegacyMachineSpace extends Component {
                 alert(err);
             });
     }
+
     render() {
         const {t} = this.props;
         return (
@@ -61,7 +63,8 @@ class LegacyMachineSpace extends Component {
 
 const mapStateToProps = function (store) {
     return {
-        machines: store.machinesState.machines
+        machines: store.machinesState.machines,
+        userid: store.userdataState._id
     };
 };
 

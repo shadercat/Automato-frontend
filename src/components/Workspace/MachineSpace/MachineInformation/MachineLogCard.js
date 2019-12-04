@@ -12,7 +12,7 @@ class LegacyMachineLogCard extends Component {
                     <Card.Header>{item.name}</Card.Header>
                     <Card.Body>
                         <Card.Title>
-                            <Badge variant={(item.priority === "normal") ? "success" : "dark"}>
+                            <Badge variant={(item.priority === "normal") ? "success" : "danger"}>
                                 {item.priority}
                             </Badge>
                             &nbsp;|&nbsp;

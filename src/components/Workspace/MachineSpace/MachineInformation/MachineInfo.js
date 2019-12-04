@@ -4,6 +4,7 @@ import {withRouter} from "react-router"
 import {Badge, Card, Col, ListGroup, ListGroupItem, Row} from "react-bootstrap";
 import MachineLogCard from "./MachineLogCard";
 import DataAccessService from "../../../../services/dataAccessService";
+import Loader from "../../../Loader";
 
 class LegacyMachineInfo extends Component {
     constructor(props) {
@@ -11,41 +12,58 @@ class LegacyMachineInfo extends Component {
         this.state = {
             data: {},
             logs: [],
-            isFetching: true
+            isFetching: true,
+            timeDelay: true,
+            timerHandler: null
         };
 
     }
 
     componentDidMount() {
+        this.setState({
+            timerHandler: setTimeout(() => {
+                this.setState({timeDelay: false})
+            }, 500)
+        });
         DataAccessService.getMachineData(this.props.match.params.id)
             .then((res) => {
                 if (res !== null) {
                     this.setState({
-                        data: res.data,
+                        data: res,
                         isFetching: false
                     });
                 }
             })
             .catch((err) => {
+                this.setState({
+                    isFetching: false
+                });
                 alert(err.toString());
             });
         DataAccessService.getMachineLog(this.props.match.params.id)
             .then((res) => {
-                console.log(res.data);
                 this.setState({
                     logs: res
                 })
             })
             .catch((err) => {
                 alert(err.toString());
-            })
+            });
+    }
+
+    componentWillUnmount() {
+        if (this.state.timerHandler !== null) {
+            clearTimeout(this.state.timerHandler)
+        }
     }
 
     render() {
         const {t} = this.props;
+        if (this.state.timeDelay || this.state.isFetching) {
+            return <Loader/>
+        }
         return (
             <div className="py-4">
-                <div id="top"/>
                 <div className="container overflow-hidden p-3 text-center bg-light" style={{minHeight: "90vh"}}>
                     <Row>
                         <Col>
@@ -66,6 +84,9 @@ class LegacyMachineInfo extends Component {
                                 </ListGroup>
                             </Card></Col>
                         <Col>
+                            <Card className="mb-3">
+                                <Card.Header as="h5">{t('logs')}</Card.Header>
+                            </Card>
                             <div style={{overflowY: "scroll", height: "90vh"}}>
                                 {this.state.logs.map((item) =>
                                     <MachineLogCard

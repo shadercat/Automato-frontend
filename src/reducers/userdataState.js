@@ -1,6 +1,7 @@
 import * as types from '../constants/ActionTypes';
 
 const initialState = {
+    _id: "1278389",
     email: "somebody",
     name: "nnnn",
     position_type: "default",

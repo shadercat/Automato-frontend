@@ -1,5 +1,5 @@
 import {Config, Paths} from "../constants/GlobalVal";
-import {standardGetRequest, standardPostRequest, advancedGetRequest} from "./standardRequestFunc";
+import {advancedGetRequest, standardGetRequest} from "./standardRequestFunc";
 
 
 const DataAccessService = {
@@ -10,7 +10,7 @@ const DataAccessService = {
         return standardGetRequest(Paths.getMachinesData, Config);
     },
     getMachineData: function (machine_id) {
-        return standardPostRequest(Paths.getMachineData, {mac_id: machine_id}, Config);
+        return advancedGetRequest(Paths.getMachineData, {mac_id: machine_id}, Config.headers, Config.withCredentials);
     },
     getMachineLog: function (machine_id) {
         return advancedGetRequest(Paths.getMachineLog, {mac_id: machine_id}, Config.headers, Config.withCredentials);

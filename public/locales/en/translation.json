@@ -80,5 +80,6 @@
   "machine": "Machine",
   "state": "State",
   "prodState": "Production state",
-  "descry": "Description"
+  "descry": "Description",
+  "logs": "Logs"
 }

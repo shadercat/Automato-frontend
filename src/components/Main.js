@@ -51,6 +51,7 @@ class Main extends Component {
             <BrowserRouter>
                 <div>
                     <Header/>
+                    <div id="top"/>
                     <Switch>
                         <Route exact path='/'>
                             <Home/>
