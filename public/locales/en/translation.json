@@ -81,5 +81,21 @@
   "state": "State",
   "prodState": "Production state",
   "descry": "Description",
-  "logs": "Logs"
+  "logs": "Logs",
+  "jan": "January",
+  "feb": "February",
+  "mar": "March",
+  "apr": "April",
+  "may": "May",
+  "jun": "June",
+  "jul": "July",
+  "aug": "August",
+  "sep": "September",
+  "oct": "October",
+  "nov": "November",
+  "dec": "December",
+  "sum": "Sum",
+  "avg": "Average",
+  "stat": "Statistic",
+  "opType": "Operation type"
 }

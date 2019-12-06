@@ -13,7 +13,8 @@ const Paths = {
     bindMachine: Main + "api/bindmachine",
     unbindMachine: Main + "api/unbindmachine",
     deleteMachineLogs: Main + "api/deletemachistory",
-    getMachineLog: Main + "api/machinelog"
+    getMachineLog: Main + "api/machinelog",
+    getMachineStat: Main + "api/machinestat"
 };
 const Config = {
     headers: {

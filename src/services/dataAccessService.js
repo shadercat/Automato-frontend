@@ -14,6 +14,9 @@ const DataAccessService = {
     },
     getMachineLog: function (machine_id) {
         return advancedGetRequest(Paths.getMachineLog, {mac_id: machine_id}, Config.headers, Config.withCredentials);
+    },
+    getMachineStat: function (machine_id) {
+        return advancedGetRequest(Paths.getMachineStat, {mac_id: machine_id}, Config.headers, Config.withCredentials);
     }
 };
 

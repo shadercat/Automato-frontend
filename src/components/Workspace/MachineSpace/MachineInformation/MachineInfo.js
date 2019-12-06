@@ -5,6 +5,9 @@ import {Badge, Card, Col, ListGroup, ListGroupItem, Row} from "react-bootstrap";
 import MachineLogCard from "./MachineLogCard";
 import DataAccessService from "../../../../services/dataAccessService";
 import Loader from "../../../Loader";
+import {Bar} from "react-chartjs-2";
+import {tlMounth, getDataSet} from "../../../../constants/ConstData";
+import _ from 'lodash';
 
 class LegacyMachineInfo extends Component {
     constructor(props) {
@@ -12,6 +15,10 @@ class LegacyMachineInfo extends Component {
         this.state = {
             data: {},
             logs: [],
+            chartData: {
+                labels: [],
+                datasets: []
+            },
             isFetching: true,
             timeDelay: true,
             timerHandler: null
@@ -49,6 +56,29 @@ class LegacyMachineInfo extends Component {
             .catch((err) => {
                 alert(err.toString());
             });
+        const {t} = this.props;
+        DataAccessService.getMachineStat(this.props.match.params.id)
+            .then((res) => {
+                let months = tlMounth(t);
+                let avg = _.fill(Array(12), 0);
+                let sum = avg.concat([]);
+                res.forEach((item, i, arr) => {
+                    let j = parseInt(item.month) - 1;
+                    avg[j] = parseFloat(item.average);
+                    sum[j] = parseFloat(item.sum);
+                });
+                let ds1 = getDataSet(t('sum'), sum, 1);
+                let ds2 = getDataSet(t('avg'), avg, 2);
+                this.setState({
+                    chartData: {
+                        labels: months,
+                        datasets: [ds1, ds2]
+                    }
+                })
+            })
+            .catch((err) => {
+                alert(err.toString());
+            })
     }
 
     componentWillUnmount() {
@@ -58,15 +88,15 @@ class LegacyMachineInfo extends Component {
     }
 
     render() {
-        const {t} = this.props;
         if (this.state.timeDelay || this.state.isFetching) {
             return <Loader/>
         }
+        const {t} = this.props;
         return (
             <div className="py-4">
-                <div className="container overflow-hidden p-3 text-center bg-light" style={{minHeight: "90vh"}}>
+                <div className="container overflow-hidden p-3 bg-light" style={{minHeight: "90vh"}}>
                     <Row>
-                        <Col>
+                        <Col sm="4">
                             <Card className="mb-3">
                                 <Card.Header as="h5">{t('machine')}</Card.Header>
                                 <Card.Body>
@@ -82,20 +112,29 @@ class LegacyMachineInfo extends Component {
                                 <ListGroup className="list-group-flush">
                                     <ListGroupItem>{`mac_id: ${this.state.data.mac_id}`}</ListGroupItem>
                                 </ListGroup>
-                            </Card></Col>
-                        <Col>
-                            <Card className="mb-3">
-                                <Card.Header as="h5">{t('logs')}</Card.Header>
                             </Card>
-                            <div style={{overflowY: "scroll", height: "90vh"}}>
-                                {this.state.logs.map((item) =>
-                                    <MachineLogCard
-                                        key={item._id}
-                                        item={item}/>
-                                )}
-                            </div>
+
+                        </Col>
+                        <Col sm="8">
+                            <Card>
+                                <Card.Header as="h5">{t('stat')}</Card.Header>
+                                <Bar
+                                    data={this.state.chartData}
+                                />
+                            </Card>
                         </Col>
                     </Row>
+
+                    <Card className="mb-3">
+                        <Card.Header as="h5">{t('logs')}</Card.Header>
+                        <div style={{overflowY: "scroll", height: "80vh"}}>
+                            {this.state.logs.map((item) =>
+                                <MachineLogCard
+                                    key={item._id}
+                                    item={item}/>
+                            )}
+                        </div>
+                    </Card>
                 </div>
             </div>
         )
