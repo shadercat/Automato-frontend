@@ -1,7 +1,7 @@
-const mounth = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
-const tlMounth = function (f) {
+const month = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+const tlMonth = function (f) {
     let tl = [];
-    mounth.forEach((item, i, arr) => {
+    month.forEach((item, i, arr) => {
         tl.push(f(item));
     });
     return tl;
@@ -41,4 +41,4 @@ const getDataSet = function (name, arr, type) {
     }
 };
 const timeDelay = 500;
-export {tlMounth, getDataSet, timeDelay};
+export {tlMonth, getDataSet, timeDelay};

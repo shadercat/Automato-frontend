@@ -114,5 +114,7 @@
   "info": "Information",
   "number": "Number",
   "location": "Location",
-  "numberOfMac": "Number of Machines"
+  "numberOfMac": "Number of Machines",
+  "notFound": "Not Found",
+  "notFoundDescry": "We can't find this page."
 }

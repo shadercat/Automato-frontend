@@ -7,7 +7,7 @@ import DataAccessService from "../../../../services/dataAccessService";
 import DataPostService from "../../../../services/dataPostService";
 import Loader from "../../../Loader";
 import {Bar} from "react-chartjs-2";
-import {getDataSet, tlMounth, timeDelay} from "../../../../constants/ConstData";
+import {getDataSet, tlMonth, timeDelay} from "../../../../constants/ConstData";
 import {ModalTop} from "../../../ModalWindow";
 import _ from 'lodash';
 
@@ -115,7 +115,7 @@ class LegacyMachineInfo extends Component {
         const {t} = this.props;
         DataAccessService.getMachineStat(this.props.match.params.id)
             .then((res) => {
-                let months = tlMounth(t);
+                let months = tlMonth(t);
                 let avg = _.fill(Array(12), 0);
                 let sum = avg.concat([]);
                 let time = _.fill(Array(24), 0);

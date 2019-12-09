@@ -7,3 +7,5 @@ export const USER_DATA_WRONG = "USER_DATA_WRONG";
 export const NOT_FOUND = "NOT_FOUND";
 export const FINE = "FINE";
 export const DATABASE_FAIL = "DATABASE_FAIL";
+export const OPERATION_DENIED = "OPERATION_DENIED";
+

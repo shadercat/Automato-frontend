@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
 import {Jumbotron} from "react-bootstrap";
+import {withTranslation} from "react-i18next";
 
 class NoFound extends Component {
     render() {
+        const {t} = this.props;
         return (
             <div>
                 <div className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
                     <Jumbotron>
-                        <h1>Not Found</h1>
+                        <h1>{t('notFound')}</h1>
                         <p>
-                            This is a simple hero unit, a simple jumbotron-style component for calling
-                            extra attention to featured content or information.
+                            {t('notFoundDescry')}
                         </p>
                     </Jumbotron>
                 </div>
@@ -19,4 +20,4 @@ class NoFound extends Component {
     }
 }
 
-export default NoFound;
+export default withTranslation()(NoFound);
