@@ -17,6 +17,12 @@ const DataAccessService = {
     },
     getMachineStat: function (machine_id) {
         return advancedGetRequest(Paths.getMachineStat, {mac_id: machine_id}, Config.headers, Config.withCredentials);
+    },
+    getCompanies: function (page) {
+        return advancedGetRequest(Paths.getCompanies, {page: page}, Config.headers, Config.withCredentials);
+    },
+    getCompanyInfo: function (email) {
+        return advancedGetRequest(Paths.getCompanyInfo, {email: email}, Config.headers, Config.withCredentials);
     }
 };
 

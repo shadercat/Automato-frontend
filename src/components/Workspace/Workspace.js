@@ -3,13 +3,14 @@ import {Nav} from "react-bootstrap";
 import {withTranslation} from "react-i18next";
 import {Link, Route, Switch} from "react-router-dom";
 import MachineSpace from "./MachineSpace/MachineSpace";
-import CompanySpace from "./CompanySpace";
+import CompanySpace from "./CompanySpace/CompanySpace";
 import StatisticSpace from "./StatisticSpace";
 import PropTypes from "prop-types";
 import {withRouter} from "react-router";
 import Hello from "./Hello";
 import ActionSpace from "./ActionSpace/ActionSpace";
 import MachineInfo from "./MachineSpace/MachineInformation/MachineInfo";
+import CompanyInfo from "./CompanySpace/CompanyInfo";
 
 
 class LegacyWorkspace extends Component {
@@ -51,6 +52,9 @@ class LegacyWorkspace extends Component {
                     </Route>
                     <Route path={`${match.path}/machines`}>
                         <MachineSpace/>
+                    </Route>
+                    <Route path={`${match.path}/company/:id`}>
+                        <CompanyInfo/>
                     </Route>
                     <Route path={`${match.path}/company`}>
                         <CompanySpace/>

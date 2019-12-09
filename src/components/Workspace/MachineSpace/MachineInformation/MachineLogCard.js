@@ -4,8 +4,25 @@ import PropTypes from "prop-types"
 import {Badge, Card, Accordion, Button} from "react-bootstrap";
 
 class LegacyMachineLogCard extends Component {
+    constructor(props) {
+        super(props);
+        this.infoToString = this.infoToString.bind(this);
+    }
+
+    infoToString(item, t) {
+        switch (item.op_type) {
+            case 'sell':
+                return (`${item.descry}. ${t('price')}: ${item.data.price}. ${t('product')}: ${item.data.product}`);
+            case 'error':
+                return (`${item.descry}. ${t('lastMod')}: ${Date(item.updatedAt).toString()}`);
+            default:
+                return item.descry;
+        }
+    }
+
     render() {
-        const {item, t} = this.props;
+        const {item, t, func} = this.props;
+        const resBtn = (item.is_resolved) ? (<> </>) : (<Button size="sm" onClick={func}>{t('resolved')}</Button>);
         return (
             <>
                 <Card className="mb-2 w-100" border={(item.priority === "normal") ? "success" : "danger"}>
@@ -27,9 +44,12 @@ class LegacyMachineLogCard extends Component {
                                 </Accordion.Toggle>
                             </Card.Text>
                             <Accordion.Collapse eventKey="0">
-                                <Card.Text>
-                                    {`${t('descry')}: ${item.descry}`}
-                                </Card.Text>
+                                <Card.Body>
+                                    <Card.Text>
+                                        {`${t('descry')}: ${this.infoToString(item, t)}`}
+                                    </Card.Text>
+                                    {resBtn}
+                                </Card.Body>
                             </Accordion.Collapse>
                         </Accordion>
                     </Card.Body>

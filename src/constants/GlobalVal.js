@@ -1,4 +1,4 @@
-const Main = "https://automato-backend.herokuapp.com/"; //http://localhost:3000/
+const Main = "http://localhost:3000/"; //http://localhost:3000/
 const Paths = {
     userLogin: Main + "users/login",
     userLogout: Main + "users/logout",
@@ -14,7 +14,11 @@ const Paths = {
     unbindMachine: Main + "api/unbindmachine",
     deleteMachineLogs: Main + "api/deletemachistory",
     getMachineLog: Main + "api/machinelog",
-    getMachineStat: Main + "api/machinestat"
+    getMachineStat: Main + "api/machinestat",
+    resolveWarnings: Main + "machine/resolve",
+    resolveWarn: Main + "machine/logresolve",
+    getCompanies: Main + "company/list",
+    getCompanyInfo: Main + "company/info"
 };
 const Config = {
     headers: {

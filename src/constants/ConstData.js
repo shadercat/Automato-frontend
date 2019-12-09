@@ -40,4 +40,5 @@ const getDataSet = function (name, arr, type) {
             };
     }
 };
-export {tlMounth, getDataSet};
+const timeDelay = 500;
+export {tlMounth, getDataSet, timeDelay};

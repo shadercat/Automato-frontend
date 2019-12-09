@@ -97,5 +97,22 @@
   "sum": "Sum",
   "avg": "Average",
   "stat": "Statistic",
-  "opType": "Operation type"
+  "opType": "Operation type",
+  "warResolved": "Warning resolved.",
+  "resWar": "Resolve all warnings",
+  "resolved": "Resolved",
+  "price": "Price",
+  "product": "Product",
+  "lastMod": "Last modified",
+  "time": "Time",
+  "month": "Month",
+  "page": "Page",
+  "watch": "watch",
+  "compList": "List of companies",
+  "compListDescry": "You can find different companies there.",
+  "createTime": "Registration time",
+  "info": "Information",
+  "number": "Number",
+  "location": "Location",
+  "numberOfMac": "Number of Machines"
 }

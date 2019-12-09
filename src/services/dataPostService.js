@@ -11,6 +11,12 @@ const DataPostService = {
     },
     unbindMachine: function (data) {
         return standardPostRequest(Paths.unbindMachine, data, Config);
+    },
+    resolveWarnings: function (machine_id) {
+        return standardPostRequest(Paths.resolveWarnings, {mac_id: machine_id}, Config);
+    },
+    resolveWarn: function (warn_id) {
+        return standardPostRequest(Paths.resolveWarn, {_id: warn_id}, Config);
     }
 };
 export default DataPostService;
