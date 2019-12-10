@@ -18,7 +18,8 @@ const Paths = {
     resolveWarnings: Main + "machine/resolve",
     resolveWarn: Main + "machine/logresolve",
     getCompanies: Main + "company/list",
-    getCompanyInfo: Main + "company/info"
+    getCompanyInfo: Main + "company/info",
+    getStatistic: Main + "api/userstat"
 };
 const Config = {
     headers: {

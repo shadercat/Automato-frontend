@@ -40,7 +40,7 @@ class LegacyCompanySpace extends Component {
     render() {
         const {t} = this.props;
         return (
-            <div className="py-4">
+            <div className="py-4" style={{minHeight: "90vh"}}>
                 <div className="container overflow-hidden p-3 bg-light">
                     <Card className="mb-3">
                         <Card.Body>

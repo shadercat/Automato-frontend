@@ -116,5 +116,6 @@
   "location": "Location",
   "numberOfMac": "Number of Machines",
   "notFound": "Not Found",
-  "notFoundDescry": "We can't find this page."
+  "notFoundDescry": "We can't find this page.",
+  "count": "Count"
 }

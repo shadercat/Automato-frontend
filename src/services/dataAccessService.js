@@ -23,6 +23,9 @@ const DataAccessService = {
     },
     getCompanyInfo: function (email) {
         return advancedGetRequest(Paths.getCompanyInfo, {email: email}, Config.headers, Config.withCredentials);
+    },
+    getStatistic: function () {
+        return standardGetRequest(Paths.getStatistic, Config);
     }
 };
 

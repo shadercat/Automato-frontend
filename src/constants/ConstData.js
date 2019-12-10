@@ -1,7 +1,7 @@
 const month = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
 const tlMonth = function (f) {
     let tl = [];
-    month.forEach((item, i, arr) => {
+    month.forEach((item) => {
         tl.push(f(item));
     });
     return tl;
@@ -40,5 +40,23 @@ const getDataSet = function (name, arr, type) {
             };
     }
 };
+const getDoughnutDatasets = function (array) {
+    return array.map((item) => {
+        return {
+            data: item,
+            backgroundColor: item.map(() => getRandomColor())
+        }
+    });
+};
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 const timeDelay = 500;
-export {tlMonth, getDataSet, timeDelay};
+export {tlMonth, getDataSet, getDoughnutDatasets, timeDelay};
