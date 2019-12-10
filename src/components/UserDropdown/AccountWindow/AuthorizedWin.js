@@ -4,6 +4,7 @@ import {NavDropdown} from "react-bootstrap";
 import {connect} from 'react-redux';
 import AuthorizationService from "../../../services/authorizationService";
 import {setUnauthorized} from "../../../actions";
+import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 
 
@@ -33,7 +34,7 @@ class LegacyAuthorizedWindow extends Component {
         return(
             <>
                 <NavDropdown title={t('account')} id="basic-nav-dropdown">
-                    <NavDropdown.Item onClick={this.sendReq}>{email}</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to={"/account"} onClick={this.sendReq}>{email}</NavDropdown.Item>
                     <NavDropdown.Item onClick={this.logoutReq}>{t('logout')}</NavDropdown.Item>
                 </NavDropdown>
             </>

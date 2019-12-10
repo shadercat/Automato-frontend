@@ -17,6 +17,9 @@ const DataPostService = {
     },
     resolveWarn: function (warn_id) {
         return standardPostRequest(Paths.resolveWarn, {_id: warn_id}, Config);
+    },
+    updateUserData: function (data) {
+        return standardPostRequest(Paths.updateUserData, data, Config);
     }
 };
 export default DataPostService;

@@ -3,12 +3,16 @@ import * as types from '../constants/ActionTypes';
 const initialState = {
     _id: "1278389",
     email: "somebody",
-    name: "nnnn",
+    name: "was told me",
     position_type: "default",
     machines: [],
     subscription_type: "default",
     comp_description: "nothing there",
-    create_time: 0
+    create_time: 0,
+    addData: {
+        number: "000-0000-0000-000",
+        location: "nowhere"
+    }
 };
 
 export default function userDataSet(state = initialState, action) {

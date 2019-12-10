@@ -12,6 +12,7 @@ import {setAuthorized, setUnauthorized, setUserdata} from "../actions";
 import AuthorizationService from "../services/authorizationService";
 import DataAccessService from "../services/dataAccessService";
 import Loader from "./Loader";
+import AccountInfo from "./AccountInfo";
 
 
 class Main extends Component {
@@ -63,6 +64,10 @@ class Main extends Component {
                         <RedirectWrapper path='/authorization' accessible={!this.props.isAuthorized}
                                          pathname="/workspace">
                             <Login/>
+                        </RedirectWrapper>
+                        <RedirectWrapper path='/account' accessible={this.props.isAuthorized}
+                                         pathname="/authorization/signin">
+                            <AccountInfo/>
                         </RedirectWrapper>
                         <Route>
                             <NoFound/>

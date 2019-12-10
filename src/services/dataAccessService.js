@@ -6,6 +6,9 @@ const DataAccessService = {
     getUserData: function () {
         return standardGetRequest(Paths.getUserData, Config);
     },
+    getAdvUserData: function () {
+        return standardGetRequest(Paths.getAdvUserData, Config);
+    },
     getMachinesData: function () {
         return standardGetRequest(Paths.getMachinesData, Config);
     },

@@ -4,6 +4,8 @@ const Paths = {
     userLogout: Main + "users/logout",
     isAuthorized: Main + "api/authorized",
     getUserData: Main + "api/userdata",
+    getAdvUserData: Main + "api/user",
+    updateUserData: Main + "users/update",
     main: "https://automato-backend.herokuapp.com/",
     registrationUser: Main + "users/register",
     getMachinesData: Main + "api/machines",
