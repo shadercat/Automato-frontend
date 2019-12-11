@@ -16,10 +16,10 @@ class LegacyAuthorizedWindow extends Component {
     static propTypes = {
         t: PropTypes.func.isRequired
     };
-    logoutReq(e){
+    logoutReq() {
         AuthorizationService.logoutMethod()
             .then((res) => {
-                if(res.success){
+                if (res.success) {
                     this.props.unAuthorize();
                 } else {
                     alert(res.reason);
@@ -34,7 +34,7 @@ class LegacyAuthorizedWindow extends Component {
         return(
             <>
                 <NavDropdown title={t('account')} id="basic-nav-dropdown">
-                    <NavDropdown.Item as={Link} to={"/account"} onClick={this.sendReq}>{email}</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to={"/account"}>{email}</NavDropdown.Item>
                     <NavDropdown.Item onClick={this.logoutReq}>{t('logout')}</NavDropdown.Item>
                 </NavDropdown>
             </>
