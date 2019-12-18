@@ -118,5 +118,34 @@
   "notFound": "Not Found",
   "notFoundDescry": "We can't find this page.",
   "count": "Count",
-  "changeInfo": "Change Information"
+  "changeInfo": "Change Information",
+  "hello": "Hello!",
+  "helloDescry": "There are your workspace. Monitoring machines, watch statistic and information, search companies fo supplying and maintaining machines, perform different actions and more.",
+  "actionDescry": "There will be more actions in future",
+  "automatoDescry": "System for monitoring sell machines state.",
+  "headline1": {
+    "head": "Easy monitoring. ",
+    "mute": "Wow",
+    "text": "Use system for easy monitoring. Watch state information for machines. Change your business strategy."
+  },
+  "headline2": {
+    "head": "Statistic. ",
+    "mute": "Amazing",
+    "text": "Reduce information and watch statistic. More information - more power."
+  },
+  "headline3": {
+    "head": "Facilities. ",
+    "mute": "Wonderful",
+    "text": "Looking for companies and improve your business. Supplying or maintaining your machine network."
+  },
+  "phone1": {
+    "head": "Owners",
+    "mute": "machine network",
+    "text": "Monitoring machines, watch statistic and improve your business"
+  },
+  "phone2": {
+    "head": "Company",
+    "mute": "manpower network",
+    "text": "Get clients, easy monitoring and maintaining"
+  }
 }

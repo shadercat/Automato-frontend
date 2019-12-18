@@ -1,5 +1,5 @@
 import React, {Component, Suspense} from "react";
-import {Button, Card, Jumbotron} from "react-bootstrap";
+import {Button, Card} from "react-bootstrap";
 import {withTranslation} from "react-i18next";
 import Loader from "../../Loader";
 import MachineList from "./MachinesList";
@@ -48,13 +48,6 @@ class LegacyMachineSpace extends Component {
                     <Suspense fallback={Loader}>
                         <MachineList/>
                     </Suspense>
-                    <Jumbotron>
-                        <h1>Workspace!</h1>
-                        <p>
-                            This is a simple hero unit, a simple jumbotron-style component for calling
-                            extra attention to featured content or information.
-                        </p>
-                    </Jumbotron>
                 </div>
             </div>
         )

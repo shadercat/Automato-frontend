@@ -4,13 +4,13 @@ import {withTranslation} from "react-i18next";
 
 class LegacyHello extends Component {
     render() {
+        const {t} = this.props;
         return (
-            <div style={{display: "flex", height: "80vh", alignItems: "center", justifyContent: "center"}}>
+            <div style={{height: "80vh"}}>
                 <Jumbotron>
-                    <h1>Hello!</h1>
+                    <h1>{t('hello')}</h1>
                     <p>
-                        This is a simple hero unit, a simple jumbotron-style component for calling
-                        extra attention to featured content or information.
+                        {t('helloDescry')}
                     </p>
                 </Jumbotron>
             </div>

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Jumbotron, Card} from "react-bootstrap";
+import {Card, Jumbotron} from "react-bootstrap";
 import {withTranslation} from "react-i18next";
 import CreateMachineBlock from "./CreateMachineBlock";
 import DeleteMachineBlock from "./DeleteMachineBlock";
@@ -9,7 +9,7 @@ import DeleteMachineLogsBlock from "./DeleteMachineLogsBlock";
 
 class LegacyActionSpace extends Component {
     render() {
-        const {t} = this.props
+        const {t} = this.props;
         return (
             <div className="py-4">
                 <div className="container overflow-hidden p-3 bg-light">
@@ -29,10 +29,9 @@ class LegacyActionSpace extends Component {
                     <DeleteMachineLogsBlock/>
                     <DeleteMachineBlock/>
                     <Jumbotron>
-                        <h1>Workspace!</h1>
+                        <h1>{t('actions')}</h1>
                         <p>
-                            This is a simple hero unit, a simple jumbotron-style component for calling
-                            extra attention to featured content or information.
+                            {t('actionDescry')}
                         </p>
                     </Jumbotron>
                 </div>
