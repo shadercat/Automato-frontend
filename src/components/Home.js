@@ -17,7 +17,7 @@ class LegacyHome extends Component {
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
-                            src="images\Empyreal_Tragicomedy_Story_CG4.png"
+                            src="images\carosel1.png"
                             alt="First slide"
                         />
                         <Carousel.Caption>
@@ -28,7 +28,7 @@ class LegacyHome extends Component {
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
-                            src="images\t0112136b402ca59108.png"
+                            src="images\carosel2.png"
                             alt="Third slide"
                         />
 
@@ -40,25 +40,13 @@ class LegacyHome extends Component {
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
-                            src="images\Memory_Crimson_Echoes_Background_2.png"
+                            src="images\carosel3.png"
                             alt="Third slide"
                         />
 
                         <Carousel.Caption>
                             <h3>{t('slide3.title')}</h3>
                             <p>{t('slide3.text')}</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src="images\Memory_Crimson_Echoes_Background_3.png"
-                            alt="Third slide"
-                        />
-
-                        <Carousel.Caption>
-                            <h3>{t('slide4.title')}</h3>
-                            <p>{t('slide4.text')}</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>
