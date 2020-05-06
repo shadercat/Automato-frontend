@@ -1,4 +1,4 @@
-const Main = "https://automato-backend.herokuapp.com/"; //http://localhost:3000/
+const Main = "https://automato-backend.azurewebsites.net/"; //http://localhost:3000/
 const Paths = {
     userLogin: Main + "users/login",
     userLogout: Main + "users/logout",
